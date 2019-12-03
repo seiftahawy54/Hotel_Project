@@ -1,8 +1,7 @@
 Hallo guys,
 finally we made the class diagram and the link is :
     https://www.lucidchart.com/invitations/accept/a8a44928-6944-405f-957c-9b5f6d45ebc0
-
-
+    
 
 Notes:
     Database classes should be added, anyone should do, so who want to do this just send to me.
