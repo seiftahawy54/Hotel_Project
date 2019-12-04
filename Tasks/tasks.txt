@@ -1,0 +1,18 @@
+Tasks Lists for each member :
+    - Seif Hesham:
+        --> Rooms Class. ( Not Done )
+    - Ali Waleed :
+        --> Services, and booking Classes. ( Not Done )
+    - Abdelghafar:
+        ==> Customers, and Guests Classes. ( Not Done )
+    - Omer Amgad:
+        --> Employee Class, and UserFunctionInerface. ( Not Done )
+    - Abdelrahmed Abdelraheem:
+        --> User Class. ( Not Done )
+    - Abdullah Abdeen:
+        --> Db class { classes for it, and its functions } ( Not Done )
+
+
+
+Note :
+    THE DEADLINE IS THE SATURDAY 7/12/2019, and for any issues just tell me.
