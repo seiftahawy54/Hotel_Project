@@ -1,0 +1,14 @@
+Attention Please,
+    A new update for class diagram to make it more usefull,
+    so the updates like:
+        - User to Room Composation relationship made.
+        - The implementation for interfaces made with dotted lines.
+        - Removed address methods from User interface.
+        - Added Database methods.
+
+
+    shareable link is:
+        - https://www.lucidchart.com/invitations/accept/cbb0598b-a736-4354-b412-ea576afd14aa
+
+Note:
+    ANY ONE MUST START WITH INTEFACE METHODS!
