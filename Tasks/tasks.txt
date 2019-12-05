@@ -1,6 +1,6 @@
 Tasks Lists for each member :
     - Seif Hesham:
-        --> Rooms Class. ( Not Done )
+        --> Rooms Class. ( Done )
     - Ali Waleed :
         --> Services, and booking Classes. ( Not Done )
     - Abdelghafar:
@@ -8,7 +8,7 @@ Tasks Lists for each member :
     - Omer Amgad:
         --> Employee Class, and UserFunctionInerface. ( Not Done )
     - Abdelrahmed Abdelraheem:
-        --> User Class. ( Not Done )
+        --> User Class. ( Done )
     - Abdullah Abdeen:
         --> Db class { classes for it, and its functions } ( Not Done )
 
