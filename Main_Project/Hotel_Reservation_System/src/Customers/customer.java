@@ -1,11 +1,13 @@
 package Customers;
+import DataBase.database;
+import User.*;
 
-public class customer extends User /* Generalization(inherite) from User class */ implements UserFunctions{
+public class customer extends user /* Generalization(inherite) from User class */ implements UserFunction {
     private String PaymentMethod;
     private String Order;
     private int DaysOfStaying;
     private int NumberOfPeople;
-    DataBase db; /* Composition relationship between Customers and DataBase */
+    database db; /* Composition relationship between Customers and DataBase */
     
     public void setPaymentMethod(String PM){
         this.PaymentMethod = PM;

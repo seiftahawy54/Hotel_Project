@@ -1,4 +1,5 @@
 package Rooms;
+import DataBase.database;
 
 public class Room {
     public String RoomName;
@@ -8,7 +9,7 @@ public class Room {
     public Double PriceForNight;
     public Boolean RoomBusy;
     public int RoomID;
-    DataBase db; // A compostion relationship between database and rooms
+    database db; // A compostion relationship between database and rooms
     
 
     public String getRoomName() {
@@ -69,6 +70,6 @@ public class Room {
     
     public String CalculateBill()
     {
-        return;
+        return null;
     }
 }

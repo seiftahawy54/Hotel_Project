@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package Customers;
-
+import Rooms.*;
+import Services.service;
 import java.util.Date;
 
 public class guest extends customer {
@@ -14,7 +15,7 @@ public class guest extends customer {
     public Date EndDate;
     public Date History;
     Booking BK; /* Composition relationship between Booking and Guest */
-    Rooms RM; /* Composition relationship between Rooms and Guest */
-    Services SV; /* Composition relationship between Services and Guest */
+    Room RM; /* Composition relationship between Rooms and Guest */
+    service SV; /* Composition relationship between Services and Guest */
 
 }
