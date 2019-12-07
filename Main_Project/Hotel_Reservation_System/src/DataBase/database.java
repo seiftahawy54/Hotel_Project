@@ -1,14 +1,12 @@
-
 package DataBase;
-
 import java.sql.*;
 
 
 public class database {
-   private final String DRIVER="com.mysql.jdbc.Driver";
-   private final String URL="jdbc:mysql://localhost/hotel";
-   private final String NAME="root";
-   private final String PASSWORD="root1234";
+   private String DRIVER="com.mysql.jdbc.Driver";
+   private String URL="jdbc:mysql://localhost:3306/hotel";
+   private String NAME="root";
+   private String PASSWORD="";
   
    //private String TableName = null;
    //private String QuereName = null;
@@ -16,7 +14,7 @@ public class database {
    private Statement stmn;
    private String InsertQuere=null;
    //private String UpdateQuere=null;   
-    database(){
+    public database(){
     
         con=null;
         stmn=null;
@@ -36,19 +34,21 @@ public class database {
         }
     }
     
-    void insert(String TableName,String name,String gender,String ssn,String position){
+    public void insert(int id, String TableName,String name,String gender,String ssn,String position){
         try{
             //insert in DB
-            InsertQuere ="INSIRT INTO "+TableName +" (name,gender,ssn,position) VALUES ('"+name+"','"+gender+"','"+ssn+"','"+position+"' )";
+            // InsertQuere ="INSIRT INTO "+TableName +" (id,name,gender,ssn,position) VALUES ("+ id + ",'" +name+"','"+gender+"','"+ssn+"','"+position+"' )";
+            InsertQuere = "INSERT INTO " + TableName + " (`id`, `name`, `gender`, `ssn`, `position`) VALUES ("+ id + ",'" +name+"','"+gender+"','"+ssn+"','"+position+"' )";
+            System.out.println(InsertQuere);
             stmn.executeUpdate(InsertQuere);
-            System.out.println("inserted successfuiiy");
+            //System.out.println("inserted successfuiiy");
         }
         catch(SQLException e){
             //error condetion
-            System.out.println("inserting error");
+            e.printStackTrace();
         }
     }
-    String Select(int id,String QuereName,String TableName){
+    public String Select(int id,String QuereName,String TableName){
         try{
         //select from DB
         String SelectQuere ="SELECT "+QuereName+" FROM "+TableName+"whare id ="+id;
@@ -63,7 +63,7 @@ public class database {
        return "0";
     }
     
-    void update(String TableName,String QuereName,int id, String NewData){
+    public void update(String TableName,String QuereName,int id, String NewData){
         try{
         //update the DB
         String UpdateQuere ="UPDATE "+TableName+" set "+QuereName+"= "+NewData+" whare id ="+id;
@@ -76,7 +76,7 @@ public class database {
         }
     }
     
-    void delete(String TableName,int id){
+    public void delete(String TableName,int id){
         try{
         //delete from the DB
         String DeleteQuere ="DELETE FROM "+TableName+" whare id ="+id;
