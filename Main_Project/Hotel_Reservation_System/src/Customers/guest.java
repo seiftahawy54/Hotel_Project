@@ -6,7 +6,6 @@
 package Customers;
 
 import java.util.Date;
-import java.util.*;
 
 public class guest extends customer {
     public String GuestName;
