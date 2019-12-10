@@ -1,0 +1,19 @@
+New Tasks are going to be done.
+
+Tasks for each member like:
+    - Seif Hesham:
+        --> Room Class Database functions implementation. ( NOT DONE )
+    - Ali Waleed:
+        --> Services and booking Classes DB. functions implementation. ( NOT DONE )
+    - Abdelghafar:
+        --> Customers, and Guests Classes DB. functions implementation. ( NOT DONE )
+    - Omer Amgad:
+        --> Employee Class DB. functions implementation /* AND GUI */. ( NOT DONE )
+    - Abdelrahman Abdelraheem:
+        --> User Class DB. functions implementation /* AND GUI */. ( NOT DONE )
+    - Abdullah Abdeen:
+        --> Creating Database Tables and send DB schema. ( NOT DONE ) /* SO IMPORTANT TASK */
+
+
+Note:
+    The deadline of these tasks at THURS 12/12/2019, and for any issues just call me.
