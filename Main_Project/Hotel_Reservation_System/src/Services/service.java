@@ -1,8 +1,7 @@
 package Services;
 
 public class service {
-    /*useing protected modifier to make access
-    on the attributes only in their super or derived classes*/
+    /*useing protected modifier to make access on the attributes only in their super or derived classes*/
    protected String Name;
    protected String Description;
    protected double Price;

@@ -1,23 +1,25 @@
 package Rooms;
 import DataBase.database;
+import Services.service;
 
 public class Room {
-    public String RoomName;
+    public int RoomID;
+    public int RoomNumber;
     public int FloorNumber;
     public int RoomCapacity;
     public String RoomType;
     public Double PriceForNight;
-    public Boolean RoomBusy;
-    public int RoomID;
+    public Boolean RoomState;
     database db; // A compostion relationship between database and rooms
     
+    
 
-    public String getRoomName() {
-        return RoomName;
+    public int getRoomNumber() {
+        return RoomNumber;
     }
 
-    public void setRoomName(String RoomName) {
-        this.RoomName = RoomName;
+    public void setRoomNumber(int RoomNumber) {
+        this.RoomNumber = RoomNumber;
     }
 
     public int getFloorNumber() {
@@ -53,11 +55,11 @@ public class Room {
     }
 
     public Boolean getRoomBusy() {
-        return RoomBusy;
+        return RoomState;
     }
 
-    public void setRoomBusy(Boolean RoomBusy) {
-        this.RoomBusy = RoomBusy;
+    public void setRoomState(Boolean RoomState) {
+        this.RoomState = RoomState;
     }
 
     public int getRoomID() {

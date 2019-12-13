@@ -1,9 +1,12 @@
 package Rooms;
 import Customers.guest;
 import java.util.Date;
+import Services.service;
+
+/* Add Services to booking */
 
 public class Booking extends guest {
-   
+    
     public void setGuestData(String GuestName,String GuestID,Date StartDate,Date EndDate,Date History)
     {//Getdata from user
       
@@ -13,11 +16,13 @@ public class Booking extends guest {
       this.EndDate=EndDate;
       this.History=History;
     }
-   /* public String getGuestData()
-    {//returning the data we set
-        return GuestName + GuestID + StartDate.toString + EndDate.toString + History ;
-       
-    }*/
+    /*
+        public String getGuestData()
+        {//returning the data we set
+            return GuestName + GuestID + StartDate.toString + EndDate.toString + History ;
+
+        }
+    */
    @Override 
    public String  toString(){
     return "main_class{" +"GuestName="+GuestName+",GuestID="+ GuestID +",StartDate="+StartDate+",EndDate="+EndDate+",History"+History+ "}";

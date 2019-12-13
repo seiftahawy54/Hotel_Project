@@ -3,6 +3,9 @@ package User;
 
 enum Gender {male , female};
 public abstract class user {
+    String UserType;
+    String UserName;
+    String Password;
     String name;
     int id ;
     Gender gender;
