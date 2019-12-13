@@ -17,5 +17,4 @@ public class guest extends customer {
     Booking BK; /* Composition relationship between Booking and Guest */
     Room RM; /* Composition relationship between Rooms and Guest */
     service SV; /* Composition relationship between Services and Guest */
-
 }

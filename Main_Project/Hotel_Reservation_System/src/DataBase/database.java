@@ -45,7 +45,7 @@ public class database {
         }
         catch(SQLException e){
             //error condetion
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
     public String Select(int id,String QuereName,String TableName){
