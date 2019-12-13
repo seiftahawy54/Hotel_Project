@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Customers;
+package GUI;
 
 /**
  *
  * @author Lenovo
  */
-class RM {
+public class Importing_Class {
     
 }
