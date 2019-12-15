@@ -1,3 +1,4 @@
+package DataBase;
 
 import java.sql.*;
 import javax.swing.*;
@@ -10,24 +11,23 @@ public class sqlconection {
     private String InsertQuere=null;
     public static Connection ConnectDB(){
         try{
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_2","root","");
-        
-        return conn;
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_db","root","");
+            return conn;
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
             return null;
         }
     }
-    public int serrsh(String sql){
+    public int search(String sql){
         conn=sqlconection.ConnectDB();
     try{
 
         ResultSet result=stmn.executeQuery(sql);
         if(result.next()) {
             return 1;
-        } 
+        }
         }
     catch(SQLException e){
             JOptionPane.showMessageDialog(null,e);
@@ -35,7 +35,9 @@ public class sqlconection {
     return 0;
     }
     public int insert(String sql){
+        conn=sqlconection.ConnectDB();
         try{
+            
             //insert in DB
             // InsertQuere ="INSIRT INTO "+TableName +" (id,name,gender,ssn,position) VALUES ("+ id + ",'" +name+"','"+gender+"','"+ssn+"','"+position+"' )";
             //InsertQuere = "INSERT INTO " + TableName + " (`id`, `name`, `gender`, `ssn`, `position`) VALUES ("+ id + ",'" +name+"','"+gender+"','"+ssn+"','"+position+"' )";
@@ -52,6 +54,7 @@ public class sqlconection {
     }
     
    public int update(String sql){
+        conn=sqlconection.ConnectDB();
         try{
         //update the D
         stmn.executeUpdate(sql);
@@ -63,6 +66,7 @@ public class sqlconection {
        return 0;
     }
    public int delete(String sql){
+        conn = sqlconection.ConnectDB();
         try{
         //delete from the DB
         stmn.executeUpdate(sql);
