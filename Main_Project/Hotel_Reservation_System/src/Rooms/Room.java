@@ -1,6 +1,9 @@
 package Rooms;
 import DataBase.database;
+import DataBase.sqlconection;
 import Services.service;
+import User.*;
+import java.sql.*;
 
 public class Room {
     public int RoomID;
@@ -12,6 +15,9 @@ public class Room {
     public Boolean RoomState;
     database db; // A compostion relationship between database and rooms
     
+    Connection conn=null;
+    PreparedStatement pst= null;
+    ResultSet rs=null;
     
 
     public int getRoomNumber() {
@@ -74,4 +80,41 @@ public class Room {
     {
         return null;
     }
+    
+    public void Add_room(int RoomID, int RoomNumber, int FloorNumber,int RoomCapacity, String RoomType, double PriceForNight,boolean RoomState) {
+        try{
+            conn=sqlconection.ConnectDB();
+            String str="INSERT INTO `room`(`RoomNum`, `FloorNum`, `RoomCapacity`, `RoomType`, `PriceForNight`, `Service_Name`) VALUES (?,?,?,?,?,?)";
+
+            pst = conn.prepareStatement(str);
+            pst.setInt(1, RoomID);
+            pst.setInt(2, FloorNumber);
+            pst.setInt(3, RoomCapacity);
+            pst.setString(4, RoomType);
+            pst.setDouble(5, PriceForNight);
+            pst.setBoolean(6, RoomState);
+            
+
+            pst.executeUpdate();
+
+            pst.close();
+            
+            conn.close();
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        
+        }
+    }
+
+    /*
+public void Delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void Update() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+*/    
 }

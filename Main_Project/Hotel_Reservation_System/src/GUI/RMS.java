@@ -107,21 +107,24 @@ public class RMS extends JFrame {
     {
         @Override
         public void actionPerformed(ActionEvent ae) {
-        
+            RMS.this.setVisible(false);
+            Filter go = new Filter();
         }
     }
     private class Nearcheckout implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent ae) {
-        
+            RMS.this.setVisible(false);
+            view ya_rab = new view();
         }
     }
     private class billprinter implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent ae) {
-        
+            RMS.this.setVisible(false);
+            bill go = new bill();
         }
     }
 }

@@ -49,4 +49,3 @@ public class customer extends user /* Generalization(inherite) from User class *
         System.out.println("Date has been updated successfully");/* Assuming */ 
     }
 }
-
