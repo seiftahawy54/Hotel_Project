@@ -37,7 +37,7 @@ public class customer extends user /* Generalization(inherite) from User class *
         return NumberOfPeople;
     }
      
-    public void Add(){
+    public void Add(int ssn,String name,int salary,String position,int age,String gender){
         System.out.println("Customer has been added successfully");/* Assuming */
     }
     
