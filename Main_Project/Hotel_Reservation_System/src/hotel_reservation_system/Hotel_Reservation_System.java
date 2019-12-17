@@ -14,5 +14,12 @@ public class Hotel_Reservation_System {
         // UserModule x = new UserModule();
         // RMS x = new RMS();
         // SeriveMS x = new SeriveMS();
+        
+       // Employee test = new Employee();
+        
+        //test.Add(300008, "Samir", 2500, "Manager", 30, "Male");
+        //sqlconection.ConnectDB();
+        Login x = new Login();
+        
     }
 }
