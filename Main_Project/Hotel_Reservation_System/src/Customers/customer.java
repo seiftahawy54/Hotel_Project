@@ -2,7 +2,7 @@ package Customers;
 import DataBase.database;
 import User.*;
 
-public class customer extends user /* Generalization(inherite) from User class */ implements UserFunction {
+public class customer extends user /* Generalization(inherite) from User class */ {
     private String PaymentMethod;
     private String Order;
     private int DaysOfStaying;

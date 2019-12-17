@@ -1,14 +1,13 @@
 
 package User;
 
-enum Gender {male , female};
 public abstract class user {
     String UserType;
     String UserName;
     String Password;
     String name;
     int id ;
-    Gender gender;
+    String gender;
     int ssn;
 
     public String getName() {
@@ -27,11 +26,11 @@ public abstract class user {
         this.id = id;
     }
 
-    public Gender getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -42,6 +41,9 @@ public abstract class user {
     public void setSsn(int ssn) {
         this.ssn = ssn;
     }
+    
+    
+    
 }
   
 

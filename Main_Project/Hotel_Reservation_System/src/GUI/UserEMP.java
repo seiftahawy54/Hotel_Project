@@ -5,6 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import DataBase.sqlconection;
+import User.Employee;
 import java.sql.*;
 
 public class UserEMP extends JFrame {
@@ -171,5 +172,27 @@ public class UserEMP extends JFrame {
            pn.add(h);
    /////////////////////  ADD PANEL 2////////////////////////////////////////////////         
            pn.add(p);
+           AdderHandler add = new AdderHandler();
+           B1.addActionListener(add);
+    }
+    
+    private class AdderHandler implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            String ssn = t2.getText().toString();
+            int ssn1 = Integer.parseInt(ssn);
+            String name = t1.getText().toString();
+            String Salary = t3.getText().toString();
+            int Salary1 = Integer.parseInt(Salary);
+            String position = t5.getText().toString();
+            String age = t4.getText().toString();
+            int age1 = Integer.parseInt(age);
+            
+            Employee xx = new Employee();
+            xx.Add(ssn1, name, Salary1,position, age1, "Male");
         }
+        
+    }
 }

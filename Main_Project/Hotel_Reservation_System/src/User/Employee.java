@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import DataBase.sqlconection;
 
 
-public class Employee extends user implements UserFunction {
+public class Employee extends user {
     
     Connection conn=null;
     PreparedStatement pst= null;
@@ -17,17 +17,17 @@ public class Employee extends user implements UserFunction {
     String position;
     
     
-    @Override
+
     public void Update()
     {
         
     }
-    @Override
+
     public void Delete()
     {
         
     }
-    @Override
+
     public void Add(int ssn,String name,int salary,String position,int age,String gender)
     {
      try{
