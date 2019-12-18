@@ -81,7 +81,7 @@ public class Room {
         return null;
     }
     
-    public void Add_room(int RoomID, int RoomNumber, int FloorNumber,int RoomCapacity, String RoomType, double PriceForNight,boolean RoomState) {
+    public void Add_Room(int RoomID, int FloorNumber,int RoomCapacity, String RoomType, double PriceForNight, String serviceName) {
         try{
             conn=sqlconection.ConnectDB();
             String str="INSERT INTO `room`(`RoomNum`, `FloorNum`, `RoomCapacity`, `RoomType`, `PriceForNight`, `Service_Name`) VALUES (?,?,?,?,?,?)";
@@ -92,8 +92,7 @@ public class Room {
             pst.setInt(3, RoomCapacity);
             pst.setString(4, RoomType);
             pst.setDouble(5, PriceForNight);
-            pst.setBoolean(6, RoomState);
-            
+            pst.setString(6, serviceName);
 
             pst.executeUpdate();
 
@@ -108,13 +107,46 @@ public class Room {
         }
     }
 
-    /*
-public void Delete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void Update_rooms(int RoomID, int FloorNumber,int RoomCapacity, String RoomType, double PriceForNight, String serviceName) {
+            try{
+            conn=sqlconection.ConnectDB();
+            String str="UPDATE `room` SET `FloorNum`=?,`RoomCapacity`=?,`RoomType`=?,`PriceForNight`=?,`Service_Name`=? WHERE `RoomNum` = ?";
+            
+            pst = conn.prepareStatement(str);
+            pst.setInt(6, RoomID);
+            pst.setInt(1, FloorNumber);
+            pst.setInt(2, RoomCapacity);
+            pst.setString(3, RoomType);
+            pst.setDouble(4, PriceForNight);
+            pst.setString(5, serviceName);
+            
+
+            pst.executeUpdate();
+
+            pst.close();
+
+            
+            conn.close();
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
     }
 
-    public void Update() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void Delete(int id) {
+        conn=sqlconection.ConnectDB();
+        try{
+            String del="delete from room where id='"+id+"'";
+            pst=conn.prepareStatement(del);
+            pst.executeUpdate();
+            pst.close();
+            conn.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
     }
-*/    
+  
 }

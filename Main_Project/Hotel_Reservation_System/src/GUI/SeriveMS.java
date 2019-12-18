@@ -80,6 +80,7 @@ public class SeriveMS extends JFrame {
         @Override
         public void actionPerformed(ActionEvent ae) {
             SeriveMS.this.setVisible(false);
+            MainServiceClass x = new MainServiceClass();
         }
     }
     

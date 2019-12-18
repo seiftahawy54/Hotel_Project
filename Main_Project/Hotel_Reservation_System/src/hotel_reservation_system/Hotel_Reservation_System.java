@@ -10,20 +10,22 @@ import User.*;
 public class Hotel_Reservation_System {
     public static void main(String[] args) {
 
-        // Login x = new Login();
-        // UserModule x = new UserModule();
-        // RMS x = new RMS();
-        // SeriveMS x = new SeriveMS();
+        //  Login x = new Login();
+        //  UserModule x = new UserModule();
+        //  RMS x = new RMS();
+        //  SeriveMS x = new SeriveMS();
         
-        // Employee test = new Employee();
-        //test.Add(300008, "Samir", 2500, "Manager", 30, "Male");
-        //sqlconection.ConnectDB();
-        // Login x = new Login();
+        //  Employee test = new Employee();
+        //  test.Add(300008, "Samir", 2500, "Manager", 30, "Male");
+        //  sqlconection.ConnectDB();
+        //  Login x = new Login();
         
-        // UserRoom x = new UserRoom();
-        // UserEMP x = new UserEMP();
+        //  UserRoom x = new UserRoom();
+        //  UserEMP x = new UserEMP();
         
-        // RMS x = new RMS();
+        //  RMS x = new RMS();
 
+        MainServiceClass x = new MainServiceClass();
+        
     }
 }

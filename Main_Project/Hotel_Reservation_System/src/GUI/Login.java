@@ -133,21 +133,13 @@ public class Login  extends JFrame {
                             RMS go = new RMS();
                         } else if (usertype.equals("service")) {
                             Login.this.setVisible(false);
-                            JOptionPane.showMessageDialog(null, String.format("%s %s", "Welcome Serivce MS", userName));
+                            JOptionPane.showMessageDialog(null, String.format("%s %s", "Welcome Serivce MS", userName, "Success", JOptionPane.INFORMATION_MESSAGE));
                             SeriveMS go = new SeriveMS();
+                        } else {
+                            username.setText("");
+                            password.setText("");
+                            JOptionPane.showMessageDialog(null, "Incorrect username or password!!", "Error", JOptionPane.ERROR_MESSAGE);
                         }
-                        
-                        
-                        /*
-                        while (return_data.next()) {
-                            if (usertype.equals("user"))
-                            {
-                                Login.this.setVisible(false);
-                                JOptionPane.showMessageDialog(null, String.format("%s", "Welcome Sir"));
-                                // Testing frame2 = new Testing();
-                            }
-                        }
-                        */
                     }
                 
             } catch (SQLException err) {
@@ -162,7 +154,7 @@ public class Login  extends JFrame {
         public void actionPerformed(ActionEvent e)
         {
             JOptionPane.showMessageDialog(null, String.format("%s", "Thanks for using our app :)"));
-            // Login.this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            Login.this.setVisible(false);
         }
     }
 }

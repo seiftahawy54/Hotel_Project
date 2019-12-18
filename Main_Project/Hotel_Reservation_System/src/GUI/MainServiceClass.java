@@ -9,15 +9,20 @@ import javax.swing.*;
 import java.awt.event.*;
 import DataBase.sqlconection;
 import java.sql.*;
+import Services.service;
 
 
 public class MainServiceClass extends JFrame {
+    public JTextField t1 = new JTextField();
+    public JTextArea t2 = new JTextArea();
+    public JTextField t4 = new JTextField();
+    
     public MainServiceClass(){
             JFrame bn4 = new JFrame();
             JPanel pn4 = new JPanel();
-            JLabel l1 = new JLabel("ServiceName :"); JTextField t1 = new JTextField();
-            JLabel l2 = new JLabel("ServiceDescription :"); JTextArea t2 = new JTextArea();
-            JLabel l4 = new JLabel("ServicePrice :"); JTextField t4 = new JTextField();
+            JLabel l1 = new JLabel("ServiceName :"); 
+            JLabel l2 = new JLabel("ServiceDescription :");
+            JLabel l4 = new JLabel("ServicePrice :");
             JButton B1 = new JButton("Add"); JButton B2 = new JButton("Update"); JButton B3 = new JButton("Delete");
             this.setTitle("Services");
             this.setSize(600, 860);
@@ -49,5 +54,57 @@ public class MainServiceClass extends JFrame {
             pn4.add(B1); pn4.add(B2); pn4.add(B3);
             pn4.setBackground(Color.darkGray);
             this.add(pn4);
+            AdderHandler add = new AdderHandler();
+            UpdaterHandler update = new UpdaterHandler();
+            DeleterHandler delete = new DeleterHandler();
+            B1.addActionListener(add);
+            B2.addActionListener(update);
+            B3.addActionListener(delete);
+    }
+    
+    private class AdderHandler implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            String servicename = t1.getText().toString();
+            String serviceDescription = t2.getText().toString();
+            String serviceprice = t4.getText().toString();
+            double serviceprice1 = Double.parseDouble(serviceprice);
+            
+            service get = new service();
+            get.Add(servicename, serviceDescription, serviceprice1);
         }
+        
+    }
+    
+    private class UpdaterHandler implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            String servicename = t1.getText().toString();
+            String serviceDescription = t2.getText().toString();
+            String serviceprice = t4.getText().toString();
+            double serviceprice1 = Double.parseDouble(serviceprice);
+            
+            service get = new service();
+            get.Update(servicename, serviceDescription, serviceprice1);
+        }
+        
+    }
+    
+    private class DeleterHandler implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            String servicename = t1.getText().toString();
+            service get = new service();
+            get.Delete(servicename);
+            
+        }
+        
+    }
+    
 }

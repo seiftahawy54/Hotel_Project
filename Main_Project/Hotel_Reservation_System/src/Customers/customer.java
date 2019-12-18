@@ -1,13 +1,16 @@
 package Customers;
-import DataBase.database;
+import DataBase.sqlconection;
 import User.*;
+import java.sql.*;
 
-public class customer extends user /* Generalization(inherite) from User class */ {
+public class customer extends user /* Generalization(inherite) from User class */ {Connection conn=null;
+    PreparedStatement pst= null;
+    ResultSet rs=null;
     private String PaymentMethod;
     private String Order;
     private int DaysOfStaying;
     private int NumberOfPeople;
-    database db; /* Composition relationship between Customers and DataBase */
+    sqlconection db; /* Composition relationship between Customers and DataBase */
     
     public void setPaymentMethod(String PM){
         this.PaymentMethod = PM;
@@ -37,15 +40,83 @@ public class customer extends user /* Generalization(inherite) from User class *
         return NumberOfPeople;
     }
      
-    public void Add(){
-        System.out.println("Customer has been added successfully");/* Assuming */
+    public void Add(String name,int ssn,int age,String paymentmethod,int numberofpeople , int daysofstay)
+    {
+     try{
+            conn=sqlconection.ConnectDB();
+            String str="insert into customer(Name, SSN, Age, PaymentMethod, NumberOfPeople , DaysOfStay)"
+            + "values(?,?,?,?,?,?)";
+
+            pst = conn.prepareStatement(str);
+            pst.setString(1, name);
+            pst.setInt(2, ssn);
+            pst.setInt(3, age);
+            pst.setString(4,paymentmethod);
+            pst.setInt(5, numberofpeople);
+            pst.setInt(6, daysofstay);
+            
+
+            pst.executeUpdate();
+
+            pst.close();
+
+            
+            //pst.close();
+            
+            conn.close();
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        
+        }
     }
     
-    public void Delete(){
-        System.out.println("Customer has been deleted successfully");/* Assuming */
+    public void Delete(int id)
+    {
+        conn=sqlconection.ConnectDB();
+        try{
+            String del="delete from customer where id='"+id+"'";
+            pst=conn.prepareStatement(del);
+            pst.executeUpdate();
+            pst.close();
+            conn.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+
+        }
     }
     
-    public void Update(){
-        System.out.println("Date has been updated successfully");/* Assuming */ 
+   public void Update(String name, int ssn , int age,String paymentmethod,int numberofpeople , int daysofstay , int id)
+    {
+        try{
+            conn=sqlconection.ConnectDB();
+            String str="update customer set Name=?, SSN=?, Age=?, PaymentMethod=?, NumberOfPeople=? , DaysOfStay=? where ID=?";
+            
+            pst = conn.prepareStatement(str);
+            pst.setString(1, name);
+            pst.setInt(2, ssn);
+            pst.setInt(3, age);
+            pst.setString(4, paymentmethod);
+            pst.setInt(5, numberofpeople);
+            pst.setInt(6, daysofstay);
+            pst.setInt(7, id);
+            
+
+            pst.executeUpdate();
+
+            pst.close();
+
+            
+            conn.close();
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+
+                        
     }
 }
